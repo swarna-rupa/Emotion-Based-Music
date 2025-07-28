@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Title -->
+        <h1 class="main-title">MUSIC RECOMMENDATION SYSTEM</h1>
+
+        <!-- Video Display Section -->
+        <div class="video-section">
+            <div class="video-wrapper">
+                <video id="video" autoplay playsinline class="yt-video"></video>
+                <div id="cameraError" class="camera-error"></div>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+        </div>
+
+        <!-- Emotion Display -->
+        <div id="emotionDisplay" class="emotion-display">
+            <span id="emotionText">READY TO DETECT</span>
+        </div>
+
+        <!-- Detection Controls -->
+        <div class="detection-controls">
+            <button id="detectEmotion" class="detect-button">
+                <i class="fas fa-music"></i> DETECT MOOD
+            </button>
+        </div>
+
+        <!-- Audio Player Section -->
+        <div class="player-section">
+            <audio id="audioPlayer" controls></audio>
+            <a id="songLink" class="download-link" target="_blank">
+                <i class="fas fa-download"></i> DOWNLOAD SONG
+            </a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
